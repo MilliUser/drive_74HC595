@@ -1,7 +1,11 @@
 #![no_std]
 #![allow(unused)]
 
-use embedded_hal::digital::OutputPin;
+#[cfg(feature = "hal-0-2")]
+use embedded_hal_0_2::digital::v2::OutputPin;
+
+#[cfg(feature = "hal-1")]
+use embedded_hal_1::digital::OutputPin;
 
 pub struct ShiftRegister<OE, SER, SRCLR, SRCLK, RCLK>
 where

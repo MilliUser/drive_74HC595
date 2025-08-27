@@ -9,5 +9,11 @@ repository = "https://github.com/RecursiveError/drive_74hc595"
 keywords = ["shift-register", "74HC595", "embedded-hal"]
 categories = ["embedded", "hardware-support", "no-std"]
 
+[features]
+default = ["hal-1"]
+hal-0-2 = ["embedded-hal-0-2"]
+hal-1   = ["embedded-hal-1"]
+
 [dependencies]
-embedded-hal = "1.0.0"
+embedded-hal-0-2 = { package = "embedded-hal", version = "0.2.7", optional = true }
+embedded-hal-1   = { package = "embedded-hal", version = "1.0.0", optional = true }
